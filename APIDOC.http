@@ -1,0 +1,45 @@
+#api for listing all doctors 
+
+###
+GET http://127.0.0.1:8000/doctors/
+Accept: application/json
+
+#api for adding doctors 
+
+###
+POST http://127.0.0.1:8000/doctors/
+Content-Type: application/json
+
+{
+    "name": "Fathima Rahman",
+    "specialization": "gynecology",
+    "fee": 900,
+    "qualification": "mbbs, ms",
+    "email": "fathimarahman@gmail.com"
+}
+
+#api call for retrieving a doctor
+
+###
+GET http://127.0.0.1:8000/doctors/3/
+Accept: application/json
+
+#api call for retrieving a doctor
+###
+PUT  http://127.0.0.1:8000/doctors/3/
+Content-Type: application/json
+
+{
+    "name": "Navami PM",
+    "specialization": "gynecology",
+    "fee": 100,
+    "qualification": "mbbs",
+    "email": "navamipashu@gmail.com"    
+}
+
+#api call for deleting a doctor
+
+###
+DELETE  http://127.0.0.1:8000/doctors/2/
+Accept: application/json
+

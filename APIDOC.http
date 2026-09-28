@@ -43,3 +43,36 @@ Content-Type: application/json
 DELETE  http://127.0.0.1:8000/doctors/2/
 Accept: application/json
 
+
+#v2 endpointss
+#APi endpoint for listing all 
+###
+
+GET http://127.0.0.1:8000/v2/doctors/
+Accept: application/json
+
+#creating a records
+###
+POST http://127.0.0.1:8000/v2/doctors/
+Content-Type: application/json
+
+{
+    "name": "hanaaaa",
+    "specialization": "gynecology",
+    "fee": 900,
+    "qualification": "mbbs, ms",
+    "email": "aajndhjdm@gmail.com",
+    
+}
+
+#api call for retrieving a doctor
+
+###
+GET http://127.0.0.1:8000/v2/doctors/1/
+Accept: application/json
+
+#api call for deleting a doctor
+
+###
+DELETE  http://127.0.0.1:8000/v2/doctors/6/
+Accept: application/json

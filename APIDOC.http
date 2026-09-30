@@ -50,7 +50,7 @@ Accept: application/json
 
 GET http://127.0.0.1:8000/v2/doctors/
 Accept: application/json
-
+Authorization: Basic Admin:admin@123
 #creating a records
 ###
 POST http://127.0.0.1:8000/v2/doctors/
@@ -76,3 +76,31 @@ Accept: application/json
 ###
 DELETE  http://127.0.0.1:8000/v2/doctors/6/
 Accept: application/json
+
+
+#updating a record  
+###
+put http://127.0.0.1:8000/v2/doctors/3/
+Content-Type: application/json
+
+{
+    "id": 3,
+    "name": "Navami PM",
+    "specialization": "gynecology",
+    "fee": 400,
+    "qualification": "mbbs md",
+    "email": "navamipashu@gmail.com"
+  }
+
+  #api call for admin Register 
+###
+POST http://127.0.0.1:8000/v2/admin-register/
+Content-Type: application/json
+
+{
+
+    "username":"Admin",
+    "email":"admin123@gmail.com",
+    "password":"admin@123"
+}
+

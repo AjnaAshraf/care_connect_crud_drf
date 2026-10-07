@@ -55,6 +55,7 @@ Authorization: Basic Admin:admin@123
 ###
 POST http://127.0.0.1:8000/v2/doctors/
 Content-Type: application/json
+Authorization: Basic Admin:admin@123
 
 {
     "name": "hanaaaa",
@@ -70,18 +71,19 @@ Content-Type: application/json
 ###
 GET http://127.0.0.1:8000/v2/doctors/1/
 Accept: application/json
-
+Authorization: Basic Admin:admin@123
 #api call for deleting a doctor
 
 ###
 DELETE  http://127.0.0.1:8000/v2/doctors/6/
 Accept: application/json
-
+Authorization: Basic Admin:admin@123
 
 #updating a record  
 ###
 put http://127.0.0.1:8000/v2/doctors/3/
 Content-Type: application/json
+Authorization: Basic Admin:admin@123
 
 {
     "id": 3,
@@ -104,3 +106,84 @@ Content-Type: application/json
     "password":"admin@123"
 }
 
+#api call for listing all appointments
+###
+GET http://127.0.0.1:8000/appointments/
+Accept: application/json
+
+###
+POST http://127.0.0.1:8000/appointments/
+Content-Type: application/json
+
+{
+    "patient_name":"Aliya Sherin",
+    "phone":"9872345577",
+    "doctor":1,
+    "appointment_date":"2026-10-11",
+    "problem":"cough"
+}
+
+#api call for signup user
+###
+POST http://127.0.0.1:8000/v2/bookings/signup/
+Content-Type: application/json
+
+{
+
+    "username":"user1",
+    "email":"user123@gmail.com",
+    "password":"user@123"
+}
+
+## api call for v2========
+
+
+
+#api for lising all appointments
+###
+GET http://127.0.0.1:8000/v2/bookings/appointments/
+Accept: application/json
+Authorization: Basic user1:user@123
+
+#api call for creating appointments
+###
+POST http://127.0.0.1:8000/v2/bookings/appointments/
+Content-Type: application/json
+Authorization: Basic user1:user@123
+
+{
+    "patient_name":"hansiya",
+    "phone":"6245894123",
+    "doctor":5,
+    "appointment_date":"2026-10-11",
+    "problem":"vomitting"
+}
+
+
+#api call for retrieving a appointment 
+###
+GET http://127.0.0.1:8000/v2/bookings/appointments/5
+Accept: application/json
+Authorization: Basic user1:user@123
+
+# api call for updating an appointment
+
+###
+PUT  http://127.0.0.1:8000/v2/bookings/appointments/9/
+Content-Type: application/json
+Authorization: Basic user1:user@123
+
+{
+    "patient_name":"hiba shahseey  ",
+    "phone":"9875894123",
+    "doctor":1,
+    "appointment_date":"2026-10-11",
+    "problem":"vomitting"
+}
+
+#api for deleting an appointment
+
+### 
+DELETE  http://127.0.0.1:8000/v2/bookings/appointments/12/
+Accept: application/json
+Authorization: Basic user1:user@123
